@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import datetime
 import shutil
+from pathlib import Path
 
 
 # Flagga för att ta bort all tidigare sparad logdata
@@ -80,15 +81,15 @@ def image_cmatrix(model, xtest, ytest):
 
 
 # Läs in datan
-x_train = np.concatenate([np.load(f"/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Train{i+1}.npy") for i in range(2)])
-x_test = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Test.npy")
-x_move = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Moved Numbers.npy")
-x_rot = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Rotated Numbers.npy")
+x_train = np.concatenate([np.load(f"X Train{i+1}.npy") for i in range(2)])
+x_test = np.load("X Test.npy")
+x_move = np.load("X Moved Numbers.npy")
+x_rot = np.load("X Rotated Numbers.npy")
 
-y_train = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Train.npy")
-y_test = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Test.npy")
-y_move = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Moved Numbers.npy")
-y_rot = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Rotated Numbers.npy")
+y_train = np.load("Y Train.npy")
+y_test = np.load("Y Test.npy")
+y_move = np.load("Y Moved Numbers.npy")
+y_rot = np.load("Y Rotated Numbers.npy")
 
 
 # Model för ett vanlig artificiellt-neuronnät.
@@ -123,11 +124,11 @@ def convolutional_model():
 
 
 # Mapp för att logga resultat som ska visas i tensorboard
-log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "-conv"
 tb_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, profile_batch=0)
 
 # Välj en modell
-model = non_convolutional_model()
+model = convolutional_model()
 
 # Träna modellen
 model.fit(x_train, y_train,

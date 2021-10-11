@@ -1,0 +1,38 @@
+Non-Convolutional-Model:
+
+Run #1:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.01
+	Validation Split = 0.2
+	Batch Size = 256
+
+	Notes:
+	The First epoch is the slowest, 2ms/step whilst the rest are 1ms/step.
+	Loss decreases pretty rapidly in the beginning. From 1.8717 to 1.1499 to 0.7855 within only three (3) epochs.
+	Accuracy also increases pretty rapidly. 0.4001 to 0.7349 to 0.8248 within three epochs.
+	Val_loss: 1.4338 -> 0.8800 -> 0.6505
+	Val_accuracy: 0.6294 -> 0.8172 -> 0.8547
+
+	In 50 epochs the non-conv AI manages to reach 0.2396 loss and 0.9314 accuracy.
+
+
+Convolutional Model:
+
+Run #1:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.01
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	Notes:
+	First epoch had 1.4957 loss and 0.6237 accuracy.
+	Every epoch took about 5 seconds and varied between 28-29ms/step. The first epoch took the longest at 6 seconds.
+	The accuracy went to 0.9 pretty fast in only 7 epochs.
+	In 50 epochs the conv AI managed to hit a loss of 0.1093 and an accuracy of 0.9691.
+	This AI model is definitely much slower so far with these settings.
+
+
+
