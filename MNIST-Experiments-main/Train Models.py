@@ -17,7 +17,7 @@ clean_logs = False
 
 # Skapa logmapp om den inte finns.
 os.makedirs("logs/", exist_ok=True)
-    
+
 # Rensa loggdata
 if clean_logs:
     shutil.rmtree("logs/")
@@ -25,13 +25,13 @@ if clean_logs:
 
 # Funktion för att generara en "Confusion matrix" som kan skrivas som en tensorflow bild.
 def image_cmatrix(model, xtest, ytest):
-    
+
     # Förutsäg utvärden och välj det med högst sannolikhet som prediktion.
     ypred = model.predict(xtest).argmax(-1)
     ytest = ytest.argmax(-1)
     acc = (ytest == ypred).mean()
     class_names = [str(x) for x in range(10)]
-    
+
     # Bygg upp en förväxlingsmatris
     cm = confusion_matrix(ytest, ypred, normalize='true')
     figure = plt.figure(figsize=(8, 8))
@@ -41,18 +41,18 @@ def image_cmatrix(model, xtest, ytest):
     tick_marks = np.arange(len(class_names))
     plt.xticks(tick_marks, class_names, rotation=45)
     plt.yticks(tick_marks, class_names)
-    
+
     # Normalisera matrisen
     cm = np.around(cm.astype('float') / cm.sum(axis=1)[:, np.newaxis], decimals=2)
-    
+
     # Bästäm gräns på när texten ska vara vit och när den ska vara svart.
     threshold = cm.max() / 2.
-    
+
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
         color = "white" if cm[i, j] > threshold else "black"
         plt.text(j, i, cm[i, j], horizontalalignment="center", color=color)
-    
-    
+
+
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
@@ -70,25 +70,25 @@ def image_cmatrix(model, xtest, ytest):
     image = tf.expand_dims(image, 0)
 
     return image
-    
-   
 
 
-    
+
+
+
 ####        TensorFlow delen börjar här          ####
 #### Du behöver inte modifiera någonting ovanför ####
-    
+
 
 # Läs in datan
-x_train = np.concatenate([np.load(f"X Train{i+1}.npy") for i in range(2)])
-x_test = np.load("X Test.npy")
-x_move = np.load("X Moved Numbers.npy")
-x_rot = np.load("X Rotated Numbers.npy")
+x_train = np.concatenate([np.load(f"/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Train{i+1}.npy") for i in range(2)])
+x_test = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Test.npy")
+x_move = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Moved Numbers.npy")
+x_rot = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/X Rotated Numbers.npy")
 
-y_train = np.load("Y Train.npy")
-y_test = np.load("Y Test.npy")
-y_move = np.load("Y Moved Numbers.npy")
-y_rot = np.load("Y Rotated Numbers.npy")
+y_train = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Train.npy")
+y_test = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Test.npy")
+y_move = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Moved Numbers.npy")
+y_rot = np.load("/Users/jonathanluks/Documents/GitHub/AI_Labb_3/MNIST-Experiments-main/Y Rotated Numbers.npy")
 
 
 # Model för ett vanlig artificiellt-neuronnät.
@@ -98,7 +98,7 @@ def non_convolutional_model():
     model.add(K.layers.Input(28*28))
     model.add(K.layers.Dense(32, activation="relu"))
     model.add(K.layers.Dense(10, activation="softmax"))
-    
+
     model.compile(loss="categorical_crossentropy",
                   optimizer=K.optimizers.SGD(lr=0.01),
                   metrics=["accuracy"])
@@ -114,7 +114,7 @@ def convolutional_model():
     model.add(K.layers.MaxPooling2D())
     model.add(K.layers.Flatten())
     model.add(K.layers.Dense(10, activation="softmax"))
-    
+
     model.compile(loss="categorical_crossentropy",
                   optimizer=K.optimizers.SGD(lr=0.01),
                   metrics=["accuracy"])
@@ -131,8 +131,8 @@ model = non_convolutional_model()
 
 # Träna modellen
 model.fit(x_train, y_train,
-      epochs=50, 
-      validation_split=0.2, 
+      epochs=50,
+      validation_split=0.2,
       batch_size=256,
       verbose=1,
       callbacks=[tb_callback]
