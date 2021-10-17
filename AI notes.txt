@@ -16,8 +16,33 @@ Run #1:
 
 	In 50 epochs the non-conv AI manages to reach 0.2396 loss and 0.9314 accuracy.
 
-	
+Run #1:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
 
+	Each step took about 800us (microseconds). The training model stopped at around 0.98 accuracy and 0.05 loss, while the 	validation model stopped around 0.965 accuracy and 0.125 loss.
+
+Run #2:
+	Settings:
+	Epochs = 50
+	Learning Rate = 1
+	Validation Split = 0.2
+	Batch Size = 256
+
+	Each step took about 800us. The validation model gets really uneven in both accuracy and loss values.
+
+
+Run #3:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.05
+	Validation Split = 0.2
+	Batch Size = 256
+
+	The training and validation model is really even but instead the accuracy and loss value is much worse. They stop at 	0.9669/0.9611 (train/validation) accuracy & 0.1171/0.1394 loss.
 
 Convolutional Model:
 
@@ -87,7 +112,7 @@ Run #6:
 	At batch size 128, each steps take half the amount of time than with 256 in batch size. The training model is even and stops 	at around 0.9972 accuracy and 0.01247 loss. The validation stops at 0.985 accuracy and 0.049 loss.
 
 
-Run #6:
+Run #7:
 	Settings:
 	Epochs = 50
 	Learning Rate = 0.1
@@ -95,4 +120,8 @@ Run #6:
 	Batch Size = 64
 	Kernel Size = (8, 8)
 
-	At batch size 64, each steps take half the time than the previous run at 128 batch size. The training model stops at 0.9992 	accuracy and 0.004 loss while validation stops at 0.9858 & 0.05482 loss.
+	At batch size 64, each steps take half the time than the previous run at 128 batch size. The training model stops at 0.9992 		accuracy and 0.004 loss while validation stops at 0.9858 & 0.05482 loss.
+
+
+
+
