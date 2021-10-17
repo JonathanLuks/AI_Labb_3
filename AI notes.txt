@@ -16,7 +16,7 @@ Run #1:
 
 	In 50 epochs the non-conv AI manages to reach 0.2396 loss and 0.9314 accuracy.
 
-Run #1:
+Run #2:
 	Settings:
 	Epochs = 50
 	Learning Rate = 0.1
@@ -25,7 +25,7 @@ Run #1:
 
 	Each step took about 800us (microseconds). The training model stopped at around 0.98 accuracy and 0.05 loss, while the 	validation model stopped around 0.965 accuracy and 0.125 loss.
 
-Run #2:
+Run #3:
 	Settings:
 	Epochs = 50
 	Learning Rate = 1
@@ -35,7 +35,7 @@ Run #2:
 	Each step took about 800us. The validation model gets really uneven in both accuracy and loss values.
 
 
-Run #3:
+Run #4:
 	Settings:
 	Epochs = 50
 	Learning Rate = 0.05
@@ -43,6 +43,29 @@ Run #3:
 	Batch Size = 256
 
 	The training and validation model is really even but instead the accuracy and loss value is much worse. They stop at 	0.9669/0.9611 (train/validation) accuracy & 0.1171/0.1394 loss.
+
+Run #5:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.05
+	Validation Split = 0.2
+	Batch Size = 256
+
+	At two times the amount of neurons (64) the model achieved 0.9729/0.9658 (train/valid) accuracy and 0.09774/0.1221 loss.
+	The times between each epoch was around 900us/step, so a bit slower than with less neurons.
+
+
+Run #6:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.05
+	Validation Split = 0.2
+	Batch Size = 256
+
+	At two times the amount of neurons (128) the model achieved 0.9769/0.9685 (train/valid) accuracy and 0.08346/0.1103 loss.
+	The times between each epoch was around 960us/step, so a bit slower than with less neurons.
+
+
 
 Convolutional Model:
 
@@ -122,6 +145,30 @@ Run #7:
 
 	At batch size 64, each steps take half the time than the previous run at 128 batch size. The training model stops at 0.9992 		accuracy and 0.004 loss while validation stops at 0.9858 & 0.05482 loss.
 
+Run #8:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	With four times more neurons (64) than before the model achieved 0.9911/0.9854 (train/valid) accuracy and 0.03172/0.04813 		loss. It took way longer to run through all the epochs. 
+
+Run #9:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 	to finish all the epochs. Around 53ms/step.
 
 
+c. Det vanliga neuronnätet (non-convolutional) gick igenom varje epok mycket snabbare än CNN. 
+Ett Non-convolutional neural network går igenom en bild varje pixel för sig, medan ett convolutional NN går igenom en bild med större block som innehåller sub-NNs.
 
+d. Under första körningen vinner CNN i jämförelse med ANN då efter 50 epoker hade den en bättre accuracy med mycket mindre loss. Dock tar CNN mycket längre tid att köra igenom alla 50 epoker i jämförelse med ANN.
+
+e.
