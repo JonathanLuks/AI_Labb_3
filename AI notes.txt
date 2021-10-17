@@ -16,6 +16,8 @@ Run #1:
 
 	In 50 epochs the non-conv AI manages to reach 0.2396 loss and 0.9314 accuracy.
 
+	
+
 
 Convolutional Model:
 
@@ -34,5 +36,63 @@ Run #1:
 	In 50 epochs the conv AI managed to hit a loss of 0.1093 and an accuracy of 0.9691.
 	This AI model is definitely much slower so far with these settings.
 
+Run #2:
+	Settings:
+	Epochs = 50
+	Learning Rate = 1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	At 1.00 Learning Rate, accuracy and loss does not change and is at a stable 0.1 and 2.4 in value.
+
+Run #3:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.5
+	Validation Split = 0.5
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is 		more stable but still worse than 0.01 LR.
+
+Run #4:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.2
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	At 0.2 Learning Rate, the validation and training model is much more even than at the previous 0.5 LR. The accuracy stops at 		around 0.985 and the loss rate stops at around 0.02.
+
+Run #5:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.11
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has 	more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
+
+Run #6:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 128
+	Kernel Size = (8, 8)
+
+	At batch size 128, each steps take half the amount of time than with 256 in batch size. The training model is even and stops 	at around 0.9972 accuracy and 0.01247 loss. The validation stops at 0.985 accuracy and 0.049 loss.
 
 
+Run #6:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 64
+	Kernel Size = (8, 8)
+
+	At batch size 64, each steps take half the time than the previous run at 128 batch size. The training model stops at 0.9992 	accuracy and 0.004 loss while validation stops at 0.9858 & 0.05482 loss.
