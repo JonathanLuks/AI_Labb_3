@@ -163,7 +163,143 @@ Run #9:
 	Batch Size = 256
 	Kernel Size = (8, 8)
 
-	With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 	to finish all the epochs. Around 53ms/step.
+	With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 		to finish all the epochs. Around 53ms/step.
+
+Run #10:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (16, 16)
+	Strides = (2, 2)
+
+	Doubling the Kernel Size and Strides the model achieved 0.9815/0.9765 accuracy in training and validation
+	and 0.06418/0.08072 loss. The average accuracy is worse with these values.
+
+Run #11:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (12, 12)
+	Strides = (2, 2)
+
+	Lowering the Kernel Size a tiny bit the model reached a little better accuracy and loss 
+	at around 0.9845/0.9793 & 0.05364/0.0684. The moved data average accuracy was at 20.88, a little better than the previous 	model.
+
+Run #12:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (12, 12)
+	Strides = (1, 1)
+
+	This model reached 0.9898/0.9857 accuracy & 0.03578/0.05074 loss. Moved data: 21.24 avg accuracy. Rotated data: 89.03 avg.
+
+Run #13:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (20, 20)
+	Strides = (1, 1)
+
+	0.9836/0.9778 accuracy & 0.0577/0.07254 loss. Moved data avg accuracy: 18.58. Rotated: 85.85 avg.
+
+Run #14:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (15, 15)
+	Strides = (1, 1)
+
+	0.9896/0.9835 accuracy & 0.03717/0.05467 loss. Moved data avg accuracy: 20.12. Rotated: 89.55 avg.
+
+Run #15:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (14, 14)
+	Strides = (1, 1)
+
+	Exactly the same as the previous one.
+
+Run #16:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (10, 10)
+	Strides = (1, 1)
+
+	Almost identical to Run #12.
+
+Run #17:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (10, 10)
+	Strides = (2, 2)
+
+	0.9861/0.9815 accuracy. 0.0472/0.06246 loss. Moved data: 21.48 avg. Rotated: 88.2 avg.
+
+Run #18:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (20, 20)
+	Strides = (2, 2)
+
+	Garbage.
+
+Run #19:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (6, 6)
+	Strides = (1, 1)
+
+	Worse and slower.
+
+Run #20:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (9, 9)
+	Strides = (1, 1)
+
+	0.9905/0.9847 accuracy & 0.0336/0.05163 loss. Moved data: 21.94 avg. Rotated: 89.86 avg
+
+Run #21:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (9, 9)
+	Strides = (1, 1)
+
+	After adding a new layer to the model it achieved 0.9957/0.9841 accuracy and 0.01539/0.05914 loss. Moved: 21.3 avg. 
+	Rotated: 91.11 avg. The model took nine minutes to train and validate. Each step took around 62ms.
+
 
 
 c. Det vanliga neuronnätet (non-convolutional) gick igenom varje epok mycket snabbare än CNN. 
@@ -171,4 +307,6 @@ Ett Non-convolutional neural network går igenom en bild varje pixel för sig, m
 
 d. Under första körningen vinner CNN i jämförelse med ANN då efter 50 epoker hade den en bättre accuracy med mycket mindre loss. Dock tar CNN mycket längre tid att köra igenom alla 50 epoker i jämförelse med ANN.
 
-e.
+e. Lär sig lite mer, men tar väldigt mycket mer tid. Inte värt att använda då modeller med mindre neuroner kan lära sig ungefär lika mycket på mycket kortare tid.
+
+f. Att öka Kernel Size över (10, 10) försämrar modellen. Att öka Strides försämrar också modellen. 
