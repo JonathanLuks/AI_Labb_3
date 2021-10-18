@@ -23,7 +23,7 @@ Run #2:
 	Validation Split = 0.2
 	Batch Size = 256
 
-	Each step took about 800us (microseconds). The training model stopped at around 0.98 accuracy and 0.05 loss, while the 	validation model stopped around 0.965 accuracy and 0.125 loss.
+	Each step took about 800us (microseconds). The training model stopped at around 0.98 accuracy and 0.05 loss, while the 		validation model stopped around 0.965 accuracy and 0.125 loss.
 
 Run #3:
 	Settings:
@@ -42,7 +42,7 @@ Run #4:
 	Validation Split = 0.2
 	Batch Size = 256
 
-	The training and validation model is really even but instead the accuracy and loss value is much worse. They stop at 	0.9669/0.9611 (train/validation) accuracy & 0.1171/0.1394 loss.
+	The training and validation model is really even but instead the accuracy and loss value is much worse. They stop at 		0.9669/0.9611 (train/validation) accuracy & 0.1171/0.1394 loss.
 
 Run #5:
 	Settings:
@@ -122,7 +122,7 @@ Run #5:
 	Batch Size = 256
 	Kernel Size = (8, 8)
 
-	At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has 	more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
+	At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has 		more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
 
 Run #6:
 	Settings:
@@ -132,7 +132,7 @@ Run #6:
 	Batch Size = 128
 	Kernel Size = (8, 8)
 
-	At batch size 128, each steps take half the amount of time than with 256 in batch size. The training model is even and stops 	at around 0.9972 accuracy and 0.01247 loss. The validation stops at 0.985 accuracy and 0.049 loss.
+	At batch size 128, each steps take half the amount of time than with 256 in batch size. The training model is even and stops 		at around 0.9972 accuracy and 0.01247 loss. The validation stops at 0.985 accuracy and 0.049 loss.
 
 
 Run #7:
@@ -310,3 +310,26 @@ d. Under första körningen vinner CNN i jämförelse med ANN då efter 50 epoke
 e. Lär sig lite mer, men tar väldigt mycket mer tid. Inte värt att använda då modeller med mindre neuroner kan lära sig ungefär lika mycket på mycket kortare tid.
 
 f. Att öka Kernel Size över (10, 10) försämrar modellen. Att öka Strides försämrar också modellen. 
+
+g. Precisionen blir mycket bättre men detta i kostnad mot träningstid, som även ökar väldigt mycket.
+
+
+
+
+
+8. Egna experiment:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
