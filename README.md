@@ -12,12 +12,11 @@ I den här filen ska ni beskriva:
 
 #### Test #1:
 ``
-    Settings: Epochs = 50,
-    Learning Rate = 0.3,
-    Batch Size = 64,
-    Neurons = 32
+    Settings: Epochs = 50  
+    Learning Rate = 0.3  
+    Batch Size = 64  
+    Neurons = 32  
     Results:
-    Test
 ``
 
 
