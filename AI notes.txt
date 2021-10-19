@@ -67,6 +67,8 @@ Run #6:
 
 
 
+FRÅGA A-B PÅ BÅDA MODELLERNA
+
 Convolutional Model:
 
 Run #1:
@@ -77,13 +79,13 @@ Run #1:
 	Batch Size = 256
 	Kernel Size = (8, 8)
 
-	Notes:
-	First epoch had 1.4957 loss and 0.6237 accuracy.
-	Every epoch took about 5 seconds and varied between 28-29ms/step. The first epoch took the longest at 6 seconds.
-	The accuracy went to 0.9 pretty fast in only 7 epochs.
-	In 50 epochs the conv AI managed to hit a loss of 0.1093 and an accuracy of 0.9691.
-	This AI model is definitely much slower so far with these settings.
-
+	accuracy = 0,9736 & 0,9736 (train först validation sen) 
+	loss = 0,0969 & 0,09685 (train först validation sen)
+	moved data = 18,06
+	rotated data = 85,99
+	
+	1m 55s
+	
 Run #2:
 	Settings:
 	Epochs = 50
@@ -92,7 +94,15 @@ Run #2:
 	Batch Size = 256
 	Kernel Size = (8, 8)
 
+	accuracy = 0,1127 & 0,106 (train först validation sen) 
+	loss = 2,302 & 2,302 (train först validation sen)
+	moved data = 11,35
+	rotated data = 7,32
+
 	At 1.00 Learning Rate, accuracy and loss does not change and is at a stable 0.1 and 2.4 in value.
+	försökte hitta gränsen där det  blir sämre.
+
+	1m 50s
 
 Run #3:
 	Settings:
@@ -101,28 +111,62 @@ Run #3:
 	Validation Split = 0.5
 	Batch Size = 256
 	Kernel Size = (8, 8)
+	
+	accuracy = 0,9873 & 0,9731 (train först validation sen) 
+	loss = 0,03895 & 0,1066 (train först validation sen)
+	moved data = 21,51
+	rotated data = 85,01
+	
+	At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is more stable but still worse than 0.01 LR.
+	försökte hitta en gräns emellan 0.01 och 1 då 1 var för stort
 
-	At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is 		more stable but still worse than 0.01 LR.
+	1m 48s
 
 Run #4:
 	Settings:
 	Epochs = 50
-	Learning Rate = 0.2
+	Learning Rate = 0.4
 	Validation Split = 0.2
 	Batch Size = 256
 	Kernel Size = (8, 8)
 
-	At 0.2 Learning Rate, the validation and training model is much more even than at the previous 0.5 LR. The accuracy stops at 		around 0.985 and the loss rate stops at around 0.02.
+	accuracy = 0,9954 & 0,9826 (train först validation sen) 
+	loss = 0,01648 & 0,07377 (train först validation sen)
+	moved data = 19,32
+	rotated data = 86,84
 
+	At 0.2 Learning Rate, the validation and training model is much more even than at the previous 0.5 LR. The accuracy stops at around 0.985 and the loss rate stops at around 0.02.
+	
+	1m 49s
+	
 Run #5:
 	Settings:
 	Epochs = 50
-	Learning Rate = 0.11
+	Learning Rate = 0.45
 	Validation Split = 0.2
 	Batch Size = 256
 	Kernel Size = (8, 8)
 
+	accuracy = 0,9993 & 0,9869 (train först validation sen) 
+	loss = 3,9969 * 10^-3 & 0,05882 (train först validation sen)
+	moved data = 21,2
+	rotated data = 91,1
+
 	At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has 		more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
+	
+	1m 50s
+
+
+
+
+
+
+
+
+
+
+BATCH SIZE
+
 
 Run #6:
 	Settings:
@@ -132,8 +176,15 @@ Run #6:
 	Batch Size = 128
 	Kernel Size = (8, 8)
 
-	At batch size 128, each steps take half the amount of time than with 256 in batch size. The training model is even and stops 		at around 0.9972 accuracy and 0.01247 loss. The validation stops at 0.985 accuracy and 0.049 loss.
 
+	accuracy = 0,9974 & 0,9852 (train först validation sen) 
+	loss = 0,01113 & 0,05159 (train först validation sen)
+	moved data = 22,04
+	rotated data = 90,16
+	
+	cut the step speed in half but did not change the total time, more steps!
+
+	1m 58s
 
 Run #7:
 	Settings:
@@ -143,18 +194,40 @@ Run #7:
 	Batch Size = 64
 	Kernel Size = (8, 8)
 
-	At batch size 64, each steps take half the time than the previous run at 128 batch size. The training model stops at 0.9992 		accuracy and 0.004 loss while validation stops at 0.9858 & 0.05482 loss.
+	accuracy = 0,9993 & 0,9862 (train först validation sen) 
+	loss = 4,2165 *10^-3 & 0,05742 (train först validation sen)
+	moved data = 22,01
+	rotated data = 89,24
+	
+	cuts the step speed down to 4ms/step
+	
+	2m 24s
+
+
+	accuracy går upp och loss ned men på förlust av både moved data och rotated data ifall vi går ner mera
+
+			NEURONER
 
 Run #8:
 	Settings:
 	Epochs = 50
-	Learning Rate = 0.1
+	Learning Rate = 0.01
 	Validation Split = 0.2
 	Batch Size = 256
 	Kernel Size = (8, 8)
+	Neuroner =  64
+
+	accuracy = 0,9952 & 0,9868 (train först validation sen) 
+	loss = 0,0177 & 0,04404 (train först validation sen)
+	moved data = 22,11
+	rotated data = 89,21
 
 	With four times more neurons (64) than before the model achieved 0.9911/0.9854 (train/valid) accuracy and 0.03172/0.04813 		loss. It took way longer to run through all the epochs. 
+	
+	step speed 27m/s	
 
+	4m 13s
+	
 Run #9:
 	Settings:
 	Epochs = 50
@@ -162,8 +235,304 @@ Run #9:
 	Validation Split = 0.2
 	Batch Size = 256
 	Kernel Size = (8, 8)
+	Neuroner = 128
 
-	With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 		to finish all the epochs. Around 53ms/step.
+	accuracy = 0,9958 & 0,9877 (train först validation sen) 
+	loss = 0,01724 & 0,04193 (train först validation sen)
+	moved data = 22,21
+	rotated data = 89,22
+
+	With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 
+	
+	step speed 52 m/s
+
+	8m 4s
+
+			KERNEL SIZE OCH STRIDE
+
+Run #10:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (10, 10)
+	Strides = (2, 2)
+
+	accuracy = 0,9904 & 0,983 (train först validation sen) 
+	loss = 0,03371 & 0,0539 (train först validation sen)
+	moved data = 22,17
+	rotated data = 90,51
+	
+	41s	
+Run #11:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (10, 10)
+	Strides = (1, 1)
+
+	accuracy = 0,9938 & 0,9853 (train först validation sen) 
+	loss = 0,02231 & 0,04759 (train först validation sen)
+	moved data = 21,07
+	rotated data = 90,85
+	
+	1m 58s
+Run #12:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+	Strides = (2, 2)
+
+	accuracy = 0,9892 & 0,9827 (train först validation sen) 
+	loss = 0,03571 & 0,0574 (train först validation sen)
+	moved data = 23,3
+	rotated data = 87,76
+	
+	37s	
+	
+			LAYERS
+Run #12:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	layers = 2
+
+	accuracy = 0,9989 & 0,9872 (train först validation sen) 
+	loss = 5,7956*10^-3 & 0,05679 (train först validation sen)
+	moved data = 22,64
+	rotated data = 91,66
+	
+	8min 43s
+
+ 
+Non-Convolutional Model:
+
+Run #1:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.01
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	accuracy = 0,9301 & 0,9309 (train först validation sen) 
+	loss = 0,2475 & 0,2423 (train först validation sen)
+	moved data = 11,98
+	rotated data = 75,77
+	
+	7s
+	
+Run #2:
+	Settings:
+	Epochs = 50
+	Learning Rate = 1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	accuracy = 0,9773 & 0,9478 (train först validation sen) 
+	loss = 0,07375 & 0,2152 (train först validation sen)
+	moved data = 15,66
+	rotated data = 75,02
+
+	försökte hitta gränsen där det  blir sämre.
+
+	7s
+
+Run #3:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.5
+	Validation Split = 0.5
+	Batch Size = 256
+	Kernel Size = (8, 8)
+	
+	accuracy = 0,996 & 0,9662 (train först validation sen) 
+	loss = 0,01788 & 0,1424 (train först validation sen)
+	moved data = 16,22
+	rotated data = 81,52
+	
+	At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is more stable but still worse than 0.01 LR.
+	försökte hitta en gräns emellan 0.01 och 1 då 1 var för stort
+
+	7s
+
+Run #4:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.4
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	accuracy = 0,9937 & 0,966 (train först validation sen) 
+	loss = 0,02512 & 0,1394 (train först validation sen)
+	moved data = 15,8
+	rotated data = 81,69
+
+	At 0.2 Learning Rate, the validation and training model is much more even than at the previous 0.5 LR. The accuracy stops at around 0.985 and the loss rate stops at around 0.02.
+	
+	7s
+	
+Run #5:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.45
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+
+	accuracy = 0,9955 & 0,9647 (train först validation sen) 
+	loss = 0,02002 & 0,1433 (train först validation sen)
+	moved data = 16,3
+	rotated data = 81,71
+
+	At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has 		more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
+	
+	7s
+
+
+
+
+				BATCH SIZE
+
+
+Run #6:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 128
+	Kernel Size = (8, 8)
+
+
+	accuracy = 0,9866 & 0,9681 (train först validation sen) 
+	loss = 0,04838 & 0,116 (train först validation sen)
+	moved data = 15,36
+	rotated data = 82,68
+	
+	cut the step speed in half but did not change the total time, more steps!
+
+	12s
+
+Run #7:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 64
+	Kernel Size = (8, 8)
+
+	accuracy = 0,9935 & 0,9633 (train först validation sen) 
+	loss = 0,02563 & 0,1467 (train först validation sen)
+	moved data = 16,79
+	rotated data = 81,38
+	
+	cuts the step speed down to 4ms/step
+	
+	23s
+
+
+	accuracy går upp och loss ned men på förlust av både moved data och rotated data ifall vi går ner mera
+
+				NEURONER
+
+Run #8:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.01
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+	Neuroner =  64
+
+	accuracy = 0,9855 & 0,9724 (train först validation sen) 
+	loss = 0,05508 & 0,1008 (train först validation sen)
+	moved data = 16,18
+	rotated data = 83,17
+
+	With four times more neurons (64) than before the model achieved 0.9911/0.9854 (train/valid) accuracy and 0.03172/0.04813 		loss. It took way longer to run through all the epochs. 
+	
+	step speed 800u/s	
+
+	8s
+	
+Run #9:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.1
+	Validation Split = 0.2
+	Batch Size = 256
+	Kernel Size = (8, 8)
+	Neuroner = 128
+
+	accuracy = 0,9903 & 0,9732 (train först validation sen) 
+	loss = 0,0412 & 0,08945 (train först validation sen)
+	moved data = 15,62
+	rotated data = 85,43
+
+	With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 
+	
+	step speed 1 m/s
+
+	9s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Run #10:
 	Settings:

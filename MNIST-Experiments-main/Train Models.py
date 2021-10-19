@@ -98,10 +98,11 @@ def non_convolutional_model():
     model.add(K.layers.Flatten())
     model.add(K.layers.Input(28*28))
     model.add(K.layers.Dense(32, activation="relu"))
+    model.add(K.layers.Dense(32, activation="relu"))
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.01),
+                  optimizer=K.optimizers.SGD(lr=0.1),
                   metrics=["accuracy"])
     return model
 
@@ -112,12 +113,13 @@ def convolutional_model():
     model = K.Sequential()
     model.add(K.layers.Input((28,28,1)))
     model.add(K.layers.Conv2D(16, kernel_size=(8, 8), strides=(1,1), activation="relu"))
+    model.add(K.layers.Conv2D(16, kernel_size=(8, 8), strides=(1,1), activation="relu"))
     model.add(K.layers.MaxPooling2D())
     model.add(K.layers.Flatten())
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.4),
+                  optimizer=K.optimizers.SGD(lr=0.1),
                   metrics=["accuracy"])
     return model
 
@@ -128,7 +130,7 @@ log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "-co
 tb_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, profile_batch=0)
 
 # Välj en modell
-model = convolutional_model()
+model = non_convolutional_model()
 
 # Träna modellen
 model.fit(x_train, y_train,
