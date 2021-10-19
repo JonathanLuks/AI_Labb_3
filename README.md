@@ -394,14 +394,12 @@ Settings:
     moved data = 21,2
     rotated data = 91,1
 
-    At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
-
     1m 50s
 ```
-![moved_data](images/0.45_lr/image1.png)
-![rotated_data](images/0.45_lr/image2.png)
-![accuracy](images/0.45_lr/epoch_accuracy.svg)
-![loss](images/0.45_lr/epoch_loss.svg)
+![moved_data](images/0.45/image1.png)
+![rotated_data](images/0.45/image2.png)
+![accuracy](images/0.45/epoch_accuracy.svg)
+![loss](images/0.45/epoch_loss.svg)
 
 
 
