@@ -26,6 +26,25 @@ I den här filen ska ni beskriva:
 #### g.
 
 
+
+### Convolutional:
+
+#### a.
+
+#### b.
+
+#### c.
+
+#### d.
+
+#### e.
+
+#### f.
+
+#### g.
+
+
+
 ## Uppgift 8:
 
 ### Convolutional (CNN):
