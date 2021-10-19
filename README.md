@@ -197,13 +197,81 @@ Settings:
 
 #### c.
 
+Det vanliga neuronnätet (non-convolutional) gick igenom varje epok mycket snabbare än CNN. 
+Ett Non-convolutional neural network går igenom en bild varje pixel för sig, medan ett convolutional NN går igenom en bild med större block som innehåller sub-NNs.
+
 #### d.
+
+Under första körningen vinner CNN i jämförelse med ANN då efter 50 epoker hade den en bättre accuracy med mycket mindre loss. Dock tar CNN mycket längre tid att köra igenom alla 50 epoker i jämförelse med ANN.
 
 #### e.
 
+Lär sig lite mer, men tar väldigt mycket mer tid. Inte värt att använda då modeller med mindre neuroner kan lära sig ungefär lika mycket på mycket kortare tid.
+
+##### Run #1:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.01
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+    Neuroner =  64
+
+    accuracy = 0,9855 & 0,9724 (train först validation sen) 
+    loss = 0,05508 & 0,1008 (train först validation sen)
+    moved data = 16,18
+    rotated data = 83,17
+
+    With four times more neurons (64) than before the model achieved 0.9911/0.9854 (train/valid) accuracy and 0.03172/0.04813 loss. It took way longer to run through all the epochs. 
+
+    step speed 800u/s	
+
+    8s
+```
+![moved_data](images/non_conv_neurones_64/image1.png)
+![rotated_data](images/non_conv_neurones_64/image2.png)
+![accuracy](images/non_conv_neurones_64/epoch_accuracy.svg)
+![loss](images/non_conv_neurones_64/epoch_loss.svg)
+
+
+##### Run #2:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+    Neuroner = 128
+
+    accuracy = 0,9903 & 0,9732 (train först validation sen) 
+    loss = 0,0412 & 0,08945 (train först validation sen)
+    moved data = 15,62
+    rotated data = 85,43
+
+    With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 
+
+    step speed 1 m/s
+
+    9s
+```
+![moved_data](images/non_conv_neurones_128/image1.png)
+![rotated_data](images/non_conv_neurones_128/image2.png)
+![accuracy](images/non_conv_neurones_128/epoch_accuracy.svg)
+![loss](images/non_conv_neurones_128/epoch_loss.svg)
+
+
 #### f.
 
+Kernel Size existerar inte i ANN.
+
+
 #### g.
+
+Att lägga till lager i ANN gjorde ingen skillnad.
 
 
 
