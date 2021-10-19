@@ -15,6 +15,24 @@ I den här filen ska ni beskriva:
 
 ##### Run #1:
 
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.01
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9301 & 0,9309 (train först validation sen) 
+    loss = 0,2475 & 0,2423 (train först validation sen)
+    moved data = 11,98
+    rotated data = 75,77
+	
+    7s
+```
+![moved_data](images/non_conv_0.01_lr/individualImage)
+
+
 #### b.
 
 #### c.
