@@ -396,11 +396,10 @@ Settings:
 
     1m 50s
 ```
-![moved_data](images/0.45/image1.png)
-![rotated_data](images/0.45/image2.png)
-![accuracy](images/0.45/epoch_accuracy.svg)
-![loss](images/0.45/epoch_loss.svg)
-
+![moved_data](images/0.45_lr/image1.png)
+![rotated_data](images/0.45_lr/image2.png)
+![accuracy](images/0.45_lr/epoch_accuracy.svg)
+![loss](images/0.45_lr/epoch_loss.svg)
 
 
 #### b.
