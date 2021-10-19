@@ -37,7 +37,6 @@ Settings:
 
 ```
 Settings:
-    Settings:
     Epochs = 50
     Learning Rate = 1
     Validation Split = 0.2
@@ -53,7 +52,7 @@ Settings:
 
     7s
 ```
-![moved_data](images/non_conv_0.01_lr/image1.png)
+![moved_data](images/non_conv_1_lr/image1.png)
 ![rotated_data](images/non_conv_0.01_lr/image2.png)
 
 ##### Run #3:
@@ -76,7 +75,7 @@ Settings:
 
     7s
 ```
-![moved_data](images/non_conv_0.01_lr/image1.png)
+![moved_data](images/non_conv_0.5_lr/image1.png)
 ![rotated_data](images/non_conv_0.01_lr/image2.png)
 
 ##### Run #4:
@@ -84,19 +83,21 @@ Settings:
 ```
 Settings:
     Epochs = 50
-    Learning Rate = 0.01
+    Learning Rate = 0.4
     Validation Split = 0.2
     Batch Size = 256
     Kernel Size = (8, 8)
 
-    accuracy = 0,9301 & 0,9309 (train först validation sen) 
-    loss = 0,2475 & 0,2423 (train först validation sen)
-    moved data = 11,98
-    rotated data = 75,77
-	
+    accuracy = 0,9937 & 0,966 (train först validation sen) 
+    loss = 0,02512 & 0,1394 (train först validation sen)
+    moved data = 15,8
+    rotated data = 81,69
+
+    At 0.2 Learning Rate, the validation and training model is much more even than at the previous 0.5 LR. The accuracy stops at around 0.985 and the loss rate stops at around 0.02.
+
     7s
 ```
-![moved_data](images/non_conv_0.01_lr/image1.png)
+![moved_data](images/non_conv_0.4_lr/image1.png)
 ![rotated_data](images/non_conv_0.01_lr/image2.png)
 
 ##### Run #5:
@@ -104,40 +105,23 @@ Settings:
 ```
 Settings:
     Epochs = 50
-    Learning Rate = 0.01
+    Learning Rate = 0.45
     Validation Split = 0.2
     Batch Size = 256
     Kernel Size = (8, 8)
 
-    accuracy = 0,9301 & 0,9309 (train först validation sen) 
-    loss = 0,2475 & 0,2423 (train först validation sen)
-    moved data = 11,98
-    rotated data = 75,77
-	
+    accuracy = 0,9955 & 0,9647 (train först validation sen) 
+    loss = 0,02002 & 0,1433 (train först validation sen)
+    moved data = 16,3
+    rotated data = 81,71
+
+    At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has 		more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
+
     7s
 ```
-![moved_data](images/non_conv_0.01_lr/image1.png)
+![moved_data](images/non_conv_0.45_lr/image1.png)
 ![rotated_data](images/non_conv_0.01_lr/image2.png)
 
-##### Run #1:
-
-```
-Settings:
-    Epochs = 50
-    Learning Rate = 0.01
-    Validation Split = 0.2
-    Batch Size = 256
-    Kernel Size = (8, 8)
-
-    accuracy = 0,9301 & 0,9309 (train först validation sen) 
-    loss = 0,2475 & 0,2423 (train först validation sen)
-    moved data = 11,98
-    rotated data = 75,77
-	
-    7s
-```
-![moved_data](images/non_conv_0.01_lr/image1.png)
-![rotated_data](images/non_conv_0.01_lr/image2.png)
 
 #### b.
 
