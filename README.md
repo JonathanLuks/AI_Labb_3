@@ -3,10 +3,6 @@ Labb 3 i kursen AI-programmering
 
 # Här är mina resultat hittils:
 
-I den här filen ska ni beskriva:
-- Era experiment
-- Era slutsatser
-
 ## Uppgift 7:
 
 ### Non-Convolutional:
