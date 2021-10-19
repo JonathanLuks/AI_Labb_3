@@ -32,6 +32,9 @@ Settings:
 ```
 ![moved_data](images/non_conv_0.01_lr/image1.png)
 ![rotated_data](images/non_conv_0.01_lr/image2.png)
+![accuracy](images/non_conv_0.01_lr/epoch_accuracy.svg)
+![loss](images/non_conv_0.01_lr/epoch_loss.svg)
+
 
 ##### Run #2:
 
@@ -54,6 +57,9 @@ Settings:
 ```
 ![moved_data](images/non_conv_1_lr/image1.png)
 ![rotated_data](images/non_conv_0.1_lr/image2.png)
+![accuracy](images/non_conv_0.1_lr/epoch_accuracy.svg)
+![loss](images/non_conv_0.1_lr/epoch_loss.svg)
+
 
 ##### Run #3:
 
@@ -77,6 +83,9 @@ Settings:
 ```
 ![moved_data](images/non_conv_0.5_lr/image1.png)
 ![rotated_data](images/non_conv_0.5_lr/image2.png)
+![accuracy](images/non_conv_0.5_lr/epoch_accuracy.svg)
+![loss](images/non_conv_0.5_lr/epoch_loss.svg)
+
 
 ##### Run #4:
 
@@ -99,6 +108,9 @@ Settings:
 ```
 ![moved_data](images/non_conv_0.4_lr/image1.png)
 ![rotated_data](images/non_conv_0.4_lr/image2.png)
+![accuracy](images/non_conv_0.4_lr/epoch_accuracy.svg)
+![loss](images/non_conv_0.4_lr/epoch_loss.svg)
+
 
 ##### Run #5:
 
@@ -121,7 +133,8 @@ Settings:
 ```
 ![moved_data](images/non_conv_0.45_lr/image1.png)
 ![rotated_data](images/non_conv_0.45_lr/image2.png)
-![test](images/non_conv_0.45_lr/epoch_accuracy.svg)
+![accuracy](images/non_conv_0.45_lr/epoch_accuracy.svg)
+![loss](images/non_conv_0.45_lr/epoch_loss.svg)
 
 
 #### b.
