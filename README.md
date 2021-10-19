@@ -7,6 +7,27 @@ I den här filen ska ni beskriva:
 - Era experiment
 - Era slutsatser
 
+## Uppgift 7:
+
+### Non-Convolutional:
+
+#### a.
+
+#### b.
+
+#### c.
+
+#### d.
+
+#### e.
+
+#### f.
+
+#### g.
+
+
+## Uppgift 8:
+
 ### Convolutional (CNN):
 
 #### Experiment #1:
