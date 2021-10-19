@@ -97,11 +97,12 @@ def non_convolutional_model():
     model = K.Sequential()
     model.add(K.layers.Flatten())
     model.add(K.layers.Input(28*28))
-    model.add(K.layers.Dense(1024 , activation="relu"))
+    model.add(K.layers.Dense(32, activation="relu"))
+    model.add(K.layers.Dense(32, activation="relu"))
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.4),
+                  optimizer=K.optimizers.SGD(lr=0.1),
                   metrics=["accuracy"])
     return model
 
@@ -111,21 +112,21 @@ def non_convolutional_model():
 def convolutional_model():
     model = K.Sequential()
     model.add(K.layers.Input((28,28,1)))
-    #model.add(K.layers.Conv2D(32, kernel_size=(8, 8), strides=(1,1), activation="relu")) #här neurons, 16 standard
-    model.add(K.layers.Conv2D(32, kernel_size=(8, 8), strides=(1,1), activation="relu")) #här neurons
+    model.add(K.layers.Conv2D(16, kernel_size=(8, 8), strides=(1,1), activation="relu"))
+    model.add(K.layers.Conv2D(16, kernel_size=(8, 8), strides=(1,1), activation="relu"))
     model.add(K.layers.MaxPooling2D())
     model.add(K.layers.Flatten())
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.4),
+                  optimizer=K.optimizers.SGD(lr=0.1),
                   metrics=["accuracy"])
     return model
 
 
 
 # Mapp för att logga resultat som ska visas i tensorboard
-log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "non-conv"
+log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "-conv"
 tb_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, profile_batch=0)
 
 # Välj en modell
@@ -135,7 +136,7 @@ model = non_convolutional_model()
 model.fit(x_train, y_train,
       epochs=50,
       validation_split=0.2,
-      batch_size=32,   #256 standard
+      batch_size=256,
       verbose=1,
       callbacks=[tb_callback]
      )
