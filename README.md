@@ -31,7 +31,7 @@ Settings:
     7s
 ```
 ![moved_data](images/non_conv_0.01_lr/individualImage.png)
-
+![rotated_data](images/non_conv_0.01_lr/individualImage (1).png)
 
 #### b.
 
