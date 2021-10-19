@@ -13,6 +13,8 @@ I den här filen ska ni beskriva:
 
 #### a.
 
+Det går att öka hastigheten på lr och få inlärningshastighen snabbare, vi kom fram till att vid 0.5 lr på var där värdet istället började bli sämre igen. 
+
 ##### Run #1:
 
 ```
@@ -141,6 +143,8 @@ Settings:
 
 
 #### b.
+
+Genom att sänka batch sizen så får vi bättre prestanda fast med en längre inlärningstid när vi går lägre på batch sizen.
 
 ##### Run #1:
 
