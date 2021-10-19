@@ -651,6 +651,11 @@ Anledning & Slutsats: Här försökte vi balansera slutsatserna utifrån föreg�
 Denna modell fick okej resultat men var väldigt långsam på att träna upp sig.
 ```
 
+![moved_data](images/test_1/image1.png)
+![rotated_data](images/test_1/image2.png)
+![accuracy](images/test_1/epoch_accuracy.svg)
+![loss](images/test_1/epoch_loss.svg)
+
 
 
 #### Experiment #2:
@@ -678,6 +683,10 @@ Anledning & Slutsats: Här sänkte vi antalet layers & neuroner för att försö
 Denna modell fick mycket sämre resultat, men var även mycket snabbare än föregående.
 ```
 
+![moved_data](images/test_2/image1.png)
+![rotated_data](images/test_2/image2.png)
+![accuracy](images/test_2/epoch_accuracy.svg)
+![loss](images/test_2/epoch_loss.svg)
 
 
 #### Experiment #3:
@@ -706,6 +715,10 @@ Denna modell fick mycket bättre resultat, dock var den lite långsammare.
 Accuracy i Moved Data stannar runt 21 men i Rotated Data ökade Accuracy väldigt mycket. Loss blev även väldigt mycket lägre.
 ```
 
+![moved_data](images/test_3/image1.png)
+![rotated_data](images/test_3/image2.png)
+![accuracy](images/test_3/epoch_accuracy.svg)
+![loss](images/test_3/epoch_loss.svg)
 
 
 #### Experiment #4:
@@ -733,6 +746,10 @@ Anledning & Slutsats: Vi dubblade antalet neuroner och halverade Batch Size för
 Denna modell fick sämre resultat i både Moved och Rotated Data. Den tog även nästan dubbelt så lång tid att köra igenom.
 Loss under Train var dock en tiondel lägre än föregående modell.
 ```
+![moved_data](images/test_4/image1.png)
+![rotated_data](images/test_4/image2.png)
+![accuracy](images/test_4/epoch_accuracy.svg)
+![loss](images/test_4/epoch_loss.svg)
 
 
 
@@ -761,6 +778,11 @@ Anledning & Slutsats: Här ville vi testa några andra slumpvalda värden utifr�
 Denna modell hade okej resultat. Accuracy i Moved Data var högst av alla modeller, men Accuracy i Rotated Data var ungefär lika. Loss var dock hyffsat låg.
 Tiden spenderad var även runt genomsnittet.
 ```
+![moved_data](images/test_5/image1.png)
+![rotated_data](images/test_5/image2.png)
+![accuracy](images/test_5/epoch_accuracy.svg)
+![loss](images/test_5/epoch_loss.svg)
+
 
 #### Slutsats Experiment CNN:
 Modellen i Experiment #3 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
@@ -790,6 +812,11 @@ Results (Accuracy & Loss):
 Anledning & Slutsats: Här ville vi testa samma värden som med Convolutional för att få en grund att utgå ifrån.
 Denna modell var väldigt dålig men väldigt snabb.
 ```
+![moved_data](images/non_conv_test_1/image1.png)
+![rotated_data](images/non_conv_test_1/image2.png)
+![accuracy](images/non_conv_test_1/epoch_accuracy.svg)
+![loss](images/non_conv_test_1/epoch_loss.svg)
+
 
 
 
@@ -815,6 +842,10 @@ Anledning & Slutsats: Här dubblade vi antalet neuroner för att se om resultate
 Alla resultat blev mycket bättre, Accuracy i allt test-data ökade och mängden Loss förbättras drastiskt.
 Det tog även bara en sekund längre för modellen att träna och validera test-datat.
 ```
+![moved_data](images/non_conv_test_2/image1.png)
+![rotated_data](images/non_conv_test_2/image2.png)
+![accuracy](images/non_conv_test_2/epoch_accuracy.svg)
+![loss](images/non_conv_test_2/epoch_loss.svg)
 
 
 
@@ -840,6 +871,10 @@ Anledning & Slutsats: Återigen gick vi på spåret att dubbla antalet neuroner.
 Resultatet blev återigen bättre.
 Tiden spenderad var bara en sekund längre.
 ```
+![moved_data](images/non_conv_test_3/image1.png)
+![rotated_data](images/non_conv_test_3/image2.png)
+![accuracy](images/non_conv_test_3/epoch_accuracy.svg)
+![loss](images/non_conv_test_3/epoch_loss.svg)
 
 
 
@@ -865,6 +900,10 @@ Anledning & Slutsats: Här multiplicerade vi antalet neuroner med åtta för att
 Resultatet blev knappast bättre.
 Tiden spenderad var nästan en hel minut längre.
 ```
+![moved_data](images/non_conv_test_4/image1.png)
+![rotated_data](images/non_conv_test_4/image2.png)
+![accuracy](images/non_conv_test_4/epoch_accuracy.svg)
+![loss](images/non_conv_test_4/epoch_loss.svg)
 
 
 
@@ -890,6 +929,10 @@ Anledning & Slutsats: Här multiplicerade vi antalet neuroner med 16 för att å
 Resultatet var väldigt varierat. Moved Data fick sämre Accuracy, medan Rotated Data fick lite bättre.
 Tiden spenderad var nästan 15 minuter. Alldeles för långsamt för ett sådant mediokert resultat.
 ```
+![moved_data](images/non_conv_test_5/image1.png)
+![rotated_data](images/non_conv_test_5/image2.png)
+![accuracy](images/non_conv_test_5/epoch_accuracy.svg)
+![loss](images/non_conv_test_5/epoch_loss.svg)
 
 
 
@@ -914,6 +957,13 @@ Results (Accuracy & Loss):
 Anledning & Slutsats: Vi gick tillbaka till 1024 neuroner och testade istället att halvera Batch Size.
 Detta gav oss högst Accuracy i både Moved & Rotated Data, samt låg Loss. Alltså ett godkänt resultat på genomsnittligt kort tid.
 ```
+![moved_data](images/non_conv_test_6/image1.png)
+![rotated_data](images/non_conv_test_6/image2.png)
+![accuracy](images/non_conv_test_6/epoch_accuracy.svg)
+![loss](images/non_conv_test_6/epoch_loss.svg)
+
+
+
 
 #### Slutsats Experiment ANN:
 Modellen i Experiment #6 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
