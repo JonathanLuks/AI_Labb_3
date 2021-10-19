@@ -150,8 +150,6 @@ Modellen i Test #3 gav oss bäst resultat när det gäller Accuracy och tid spen
 
 
 
-
-
 ### Non-Convolutional (ANN):
 
 #### Test #1:
@@ -175,6 +173,67 @@ Results (Accuracy & Loss):
 Anledning & Slutsats: Här ville vi testa samma värden som med Convolutional för att få en grund att utgå ifrån.
 Denna modell var väldigt dålig men väldigt snabb.
 ```
+
+
+
+#### Test #2:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.4
+    Batch Size =        64 
+    Neurons =           64  
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9769
+    Moved:                          16.73 Average
+    Rotated:                        85.98 Average
+    
+    Loss (Train & Validation):      6.8722*10^-4 & 0.1196
+    
+    Time elapsed: 24 seconds
+    
+Anledning & Slutsats: Här dubblade vi antalet neuroner för att se om resultatet skulle förbättras.
+Alla resultat blev mycket bättre, Accuracy i allt test-data ökade och mängden Loss förbättras drastiskt.
+Det tog även bara en sekund längre för modellen att träna och validera test-datat.
+```
+
+
+
+#### Test #3:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.4
+    Batch Size =        64 
+    Neurons =           64  
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9769
+    Moved:                          16.73 Average
+    Rotated:                        85.98 Average
+    
+    Loss (Train & Validation):      6.8722*10^-4 & 0.1196
+    
+    Time elapsed: 24 seconds
+    
+Anledning & Slutsats: Här dubblade vi antalet neuroner för att se om resultatet skulle förbättras.
+Alla resultat blev mycket bättre, Accuracy i allt test-data ökade och mängden Loss förbättras drastiskt.
+Det tog även bara en sekund längre för modellen att träna och validera test-datat.
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Glöm inte!
