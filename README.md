@@ -14,19 +14,22 @@ I den här filen ska ni beskriva:
 
 ```
 Settings:    
-    Epochs = 50    
+    Epochs =        50    
     Learning Rate = 0.3  
-    Batch Size = 64  
-    Neurons = 32  
+    Batch Size =    64  
+    Neurons =       32  
     
 Results (Accuracy & Loss):
-    Accuracy (Train / Validation): 0.994 / 0.9651
-    Moved: 15.54 Average
-    Rotated: 82.28 Average
+    Accuracy (Train / Validation):  0.994 / 0.9651
+    Moved:                          15.54 Average
+    Rotated:                        82.28 Average
     
-    Loss (Train / Validation): 0.01946 / 0.2458
+    Loss (Train / Validation):      0.01946 / 0.2458
     
     Time elapsed: 23 seconds
+    
+Anledning & Slutsats: Här ville vi testa samma värden som med Convolutional för att få en grund att utgå ifrån.
+Denna modell var väldigt dålig men väldigt snabb.
 ```
 
 
