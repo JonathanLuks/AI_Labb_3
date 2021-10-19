@@ -230,10 +230,10 @@ Settings:
 
     8s
 ```
-![moved_data](images/non_conv_neurones_64/image1.png)
-![rotated_data](images/non_conv_neurones_64/image2.png)
-![accuracy](images/non_conv_neurones_64/epoch_accuracy.svg)
-![loss](images/non_conv_neurones_64/epoch_loss.svg)
+![moved_data](images/non_conv_neurons_64/image1.png)
+![rotated_data](images/non_conv_neurons_64/image2.png)
+![accuracy](images/non_conv_neurons_64/epoch_accuracy.svg)
+![loss](images/non_conv_neurons_64/epoch_loss.svg)
 
 
 ##### Run #2:
@@ -258,10 +258,10 @@ Settings:
 
     9s
 ```
-![moved_data](images/non_conv_neurones_128/image1.png)
-![rotated_data](images/non_conv_neurones_128/image2.png)
-![accuracy](images/non_conv_neurones_128/epoch_accuracy.svg)
-![loss](images/non_conv_neurones_128/epoch_loss.svg)
+![moved_data](images/non_conv_neurons_128/image1.png)
+![rotated_data](images/non_conv_neurons_128/image2.png)
+![accuracy](images/non_conv_neurons_128/epoch_accuracy.svg)
+![loss](images/non_conv_neurons_128/epoch_loss.svg)
 
 
 #### f.
