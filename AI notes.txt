@@ -187,7 +187,7 @@ Run #11:
 	Strides = (2, 2)
 
 	Lowering the Kernel Size a tiny bit the model reached a little better accuracy and loss 
-	at around 0.9845/0.9793 & 0.05364/0.0684. The moved data average accuracy was at 20.88, a little better than the previous 	model.
+	at around 0.9845/0.9793 & 0.05364/0.0684. The moved data average accuracy was at 20.88, a little better than the previous 		model.
 
 Run #12:
 	Settings:
@@ -319,11 +319,64 @@ g. Precisionen blir mycket bättre men detta i kostnad mot träningstid, som äv
 
 8. Egna experiment:
 
+Conv:
+Test #1:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.3
+	Batch Size = 64
+	Kernel Size = (8, 8)
+	Strides = (1, 1)
+	Layers: 2
+	Neurons: 32
 
 
+	1/0.9897 Accuracy (train/validation). 2.1445*10^-5/0.007792 (train/validation) Loss. Moved: 23.74 avg. Rotated: 89.92 avg.
+	21 minutes 47 seconds elapsed.
 
 
+Test #2:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.35
+	Batch Size = 64
+	Kernel Size = (8, 8)
+	Strides = (1, 1)
+	Layers: 1
+	Neurons: 16
 
+
+	0.9963/0.9794 Accuracy (train/validation). 0.01093/0.1201 Loss (train/validation). Moved: 21.01 avg. Rotated: 86.47 avg.
+	2 minutes 15 seconds elapsed.
+
+
+Test #3:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.4
+	Batch Size = 64
+	Kernel Size = (8, 8)
+	Strides = (1, 1)
+	Layers: 1
+	Neurons: 32
+
+
+	1/0.9875 Accuracy. 2.9956*10^-4/0.06705 Loss. Moved: 21.65 avg. Rotated: 90.17 avg.
+	2 minutes 57 seconds elapsed.
+
+
+Test #4:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.45
+	Batch Size = 64
+	Kernel Size = (8, 8)
+	Strides = (1, 1)
+	Layers: 1
+	Neurons: 32
+
+
+	
 
 
 
