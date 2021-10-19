@@ -81,15 +81,15 @@ def image_cmatrix(model, xtest, ytest):
 
 
 # Läs in datan
-x_train = np.concatenate([np.load(f"X Train{i+1}.npy") for i in range(2)])
-x_test = np.load("X Test.npy")
-x_move = np.load("X Moved Numbers.npy")
-x_rot = np.load("X Rotated Numbers.npy")
+x_train = np.concatenate([np.load(f"D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Train{i+1}.npy") for i in range(2)])
+x_test = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Test.npy")
+x_move = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Moved Numbers.npy")
+x_rot = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Rotated Numbers.npy")
 
-y_train = np.load("Y Train.npy")
-y_test = np.load("Y Test.npy")
-y_move = np.load("Y Moved Numbers.npy")
-y_rot = np.load("Y Rotated Numbers.npy")
+y_train = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Train.npy")
+y_test = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Test.npy")
+y_move = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Moved Numbers.npy")
+y_rot = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Rotated Numbers.npy")
 
 
 # Model för ett vanlig artificiellt-neuronnät.
@@ -117,7 +117,7 @@ def convolutional_model():
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.01),
+                  optimizer=K.optimizers.SGD(lr=0.4),
                   metrics=["accuracy"])
     return model
 
