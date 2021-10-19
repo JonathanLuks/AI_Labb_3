@@ -137,7 +137,63 @@ Settings:
 ![loss](images/non_conv_0.45_lr/epoch_loss.svg)
 
 
+
+
+
 #### b.
+
+##### Run #1:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 128
+    Kernel Size = (8, 8)
+
+
+    accuracy = 0,9866 & 0,9681 (train först validation sen) 
+    loss = 0,04838 & 0,116 (train först validation sen)
+    moved data = 15,36
+    rotated data = 82,68
+
+    cut the step speed in half but did not change the total time, more steps!
+
+    12s
+```
+![moved_data](images/non_conv_batch_size_128/image1.png)
+![rotated_data](images/non_conv_batch_size_128/image2.png)
+![accuracy](images/non_conv_batch_size_128/epoch_accuracy.svg)
+![loss](images/non_conv_batch_size_128/epoch_loss.svg)
+
+
+##### Run #2:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 64
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9935 & 0,9633 (train först validation sen) 
+    loss = 0,02563 & 0,1467 (train först validation sen)
+    moved data = 16,79
+    rotated data = 81,38
+
+    cuts the step speed down to 4ms/step
+
+    23s
+
+    accuracy går upp och loss ned men på förlust av både moved data och rotated data ifall vi går ner mera
+```
+![moved_data](images/non_conv_batch_size_64/image1.png)
+![rotated_data](images/non_conv_batch_size_64/image2.png)
+![accuracy](images/non_conv_batch_size_64/epoch_accuracy.svg)
+![loss](images/non_conv_batch_size_64/epoch_loss.svg)
+
 
 #### c.
 
@@ -464,19 +520,3 @@ Detta gav oss högst Accuracy i både Moved & Rotated Data, samt låg Loss. Allt
 
 #### Slutsats Experiment ANN:
 Modellen i Experiment #6 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
-
-
-
-
-
-
-
-
-
-
-
-## Glöm inte!
-
-Glöm inte att ha med figurer:
-
-![TensorBoard download](fig/TensorBoardDownload.png "Glöm inte att kryssa i 'Show data download links' så att ni kan ladda ner era filer.")
