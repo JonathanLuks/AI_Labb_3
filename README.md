@@ -146,7 +146,7 @@ Tiden spenderad var även runt genomsnittet.
 ```
 
 #### Slutsats Experiment CNN:
-Modellen i Test #3 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
+Modellen i Experiment #3 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
 
 
 
@@ -299,7 +299,7 @@ Detta gav oss högst Accuracy i både Moved & Rotated Data, samt låg Loss. Allt
 ```
 
 #### Slutsats Experiment ANN:
-Modellen i Test #6 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
+Modellen i Experiment #6 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
 
 
 
