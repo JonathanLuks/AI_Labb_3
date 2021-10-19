@@ -1,2 +1,2 @@
-# AI_Labb_3
- 
+# MNIST-Experiments
+Labb 3 i kursen AI-programmering
