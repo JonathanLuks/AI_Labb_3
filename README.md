@@ -407,15 +407,221 @@ Settings:
 
 #### b.
 
-#### c.
+##### Run #1:
 
-#### d.
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 128
+    Kernel Size = (8, 8)
+
+
+    accuracy = 0,9974 & 0,9852 (train först validation sen) 
+    loss = 0,01113 & 0,05159 (train först validation sen)
+    moved data = 22,04
+    rotated data = 90,16
+
+    cut the step speed in half but did not change the total time, more steps!
+
+    1m 58s
+```
+![moved_data](images/batch_size_128_0.1_lr/image1.png)
+![rotated_data](images/batch_size_128_0.1_lr/image2.png)
+![accuracy](images/batch_size_128_0.1_lr/epoch_accuracy.svg)
+![loss](images/batch_size_128_0.1_lr/epoch_loss.svg)
+
+
+##### Run #2:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 64
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9993 & 0,9862 (train först validation sen) 
+    loss = 4,2165 *10^-3 & 0,05742 (train först validation sen)
+    moved data = 22,01
+    rotated data = 89,24
+
+    cuts the step speed down to 4ms/step
+
+    2m 24s
+
+    accuracy går upp och loss ned men på förlust av både moved data och rotated data ifall vi går ner mera
+```
+![moved_data](images/batch_size_64_0.1_lr/image1.png)
+![rotated_data](images/batch_size_64_0.1_lr/image2.png)
+![accuracy](images/batch_size_64_0.1_lr/epoch_accuracy.svg)
+![loss](images/batch_size_64_0.1_lr/epoch_loss.svg)
+
 
 #### e.
 
+##### Run #1:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.01
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+    Neuroner =  64
+
+    accuracy = 0,9952 & 0,9868 (train först validation sen) 
+    loss = 0,0177 & 0,04404 (train först validation sen)
+    moved data = 22,11
+    rotated data = 89,21
+
+    With four times more neurons (64) than before the model achieved 0.9911/0.9854 (train/valid) accuracy and 0.03172/0.04813 loss. It took way longer to run through all the epochs. 
+
+    step speed 27m/s	
+
+    4m 13s
+```
+![moved_data](images/neurons_64/image1.png)
+![rotated_data](images/neurons_64/image2.png)
+![accuracy](images/neurons_64/epoch_accuracy.svg)
+![loss](images/neurons_64/epoch_loss.svg)
+
+
+##### Run #2:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+    Neuroner = 128
+
+    accuracy = 0,9958 & 0,9877 (train först validation sen) 
+    loss = 0,01724 & 0,04193 (train först validation sen)
+    moved data = 22,21
+    rotated data = 89,22
+
+    With 128 neurons the model achieved 0.09916/0.9857 (train/valid) accuracy and 0.03089/0.04789 loss. It took almost 8 minutes 
+
+    step speed 52 m/s
+
+    8m 4s
+```
+![moved_data](images/neurons_128/image1.png)
+![rotated_data](images/neurons_128/image2.png)
+![accuracy](images/neurons_128/epoch_accuracy.svg)
+![loss](images/neurons_128/epoch_loss.svg)
+
+
+
 #### f.
 
+Att öka Kernel Size över (10, 10) försämrar modellen. Att öka Strides försämrar också modellen.
+
+##### Run #1:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (10, 10)
+    Strides = (2, 2)
+
+    accuracy = 0,9904 & 0,983 (train först validation sen) 
+    loss = 0,03371 & 0,0539 (train först validation sen)
+    moved data = 22,17
+    rotated data = 90,51
+
+    41s
+```
+![moved_data](images/kernel_size_och_stride_1010_22/image1.png)
+![rotated_data](images/kernel_size_och_stride_1010_22/image2.png)
+![accuracy](images/kernel_size_och_stride_1010_22/epoch_accuracy.svg)
+![loss](images/kernel_size_och_stride_1010_22/epoch_loss.svg)
+
+
+##### Run #2:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (10, 10)
+    Strides = (1, 1)
+
+    accuracy = 0,9938 & 0,9853 (train först validation sen) 
+    loss = 0,02231 & 0,04759 (train först validation sen)
+    moved data = 21,07
+    rotated data = 90,85
+
+    1m 58s
+```
+![moved_data](images/kernel_size_och_stride_1010_11/image1.png)
+![rotated_data](images/kernel_size_och_stride_1010_11/image2.png)
+![accuracy](images/kernel_size_och_stride_1010_11/epoch_accuracy.svg)
+![loss](images/kernel_size_och_stride_1010_11/epoch_loss.svg)
+
+
+##### Run #3:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+    Strides = (2, 2)
+
+    accuracy = 0,9892 & 0,9827 (train först validation sen) 
+    loss = 0,03571 & 0,0574 (train först validation sen)
+    moved data = 23,3
+    rotated data = 87,76
+
+    37s	
+```
+![moved_data](images/kernel_size_och_stride_88_22/image1.png)
+![rotated_data](images/kernel_size_och_stride_88_22/image2.png)
+![accuracy](images/kernel_size_och_stride_88_22/epoch_accuracy.svg)
+![loss](images/kernel_size_och_stride_88_22/epoch_loss.svg)
+
+
+
 #### g.
+
+Precisionen blir mycket bättre men detta i kostnad mot träningstid, som även ökar väldigt mycket.
+
+##### Run #1:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.1
+    Validation Split = 0.2
+    Batch Size = 256
+    layers = 2
+
+    accuracy = 0,9989 & 0,9872 (Train & Validation) 
+    loss = 5,7956*10^-3 & 0,05679 (Train & Validation) 
+    moved data = 22,64
+    rotated data = 91,66
+
+    8min 43s
+```
+![moved_data](images/2_layers/image1.png)
+![rotated_data](images/2_layers/image2.png)
+![accuracy](images/2_layers/epoch_accuracy.svg)
+![loss](images/2_layers/epoch_loss.svg)
+
 
 
 
