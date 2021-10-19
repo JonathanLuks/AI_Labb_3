@@ -307,7 +307,7 @@ Results (Accuracy & Loss):
     
     Loss (Train & Validation):      4.05*10^-4 & 0.07187
     
-    Time elapsed: 13 minute 47 seconds
+    Time elapsed: 13 minutes 17 seconds
     
 Anledning & Slutsats: Här multiplicerade vi antalet neuroner med 16 för att återigen se när modellen blir sämre.
 Resultatet var väldigt varierat. Moved Data fick sämre Accuracy, medan Rotated Data fick lite bättre.
@@ -332,7 +332,7 @@ Results (Accuracy & Loss):
     
     Loss (Train & Validation):      1.5577*10^-4 & 0.08045
     
-    Time elapsed: 2 minute 36 seconds
+    Time elapsed: 2 minutes 36 seconds
     
 Anledning & Slutsats: Vi gick tillbaka till 1024 neuroner och testade istället att halvera Batch Size.
 Detta gav oss högst Accuracy i både Moved & Rotated Data, samt låg Loss. Alltså ett godkänt resultat på genomsnittligt kort tid.
