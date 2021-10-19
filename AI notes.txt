@@ -424,7 +424,7 @@ layers var testat men ser ej någon skillnad jämfört med 1 layer
 
 
 
-
+a. Det går att öka hastigheten på lr och få inlärningshastighen snabbare, vi kom fram till att vid 0.5 lr på var där värdet istället började bli sämre igen.
 
 
 c. Det vanliga neuronnätet (non-convolutional) gick igenom varje epok mycket snabbare än CNN. 
