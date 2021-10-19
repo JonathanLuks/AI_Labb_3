@@ -9,7 +9,7 @@ I den här filen ska ni beskriva:
 
 ### Convolutional (CNN):
 
-#### Test #1:
+#### Experiment #1:
 
 ```
 Settings:    
@@ -36,7 +36,7 @@ Denna modell fick okej resultat men var väldigt långsam på att träna upp sig
 
 
 
-#### Test #2:
+#### Experiment #2:
 
 ```
 Settings:    
@@ -63,7 +63,7 @@ Denna modell fick mycket sämre resultat, men var även mycket snabbare än för
 
 
 
-#### Test #3:
+#### Experiment #3:
 
 ```
 Settings:    
@@ -91,7 +91,7 @@ Accuracy i Moved Data stannar runt 21 men i Rotated Data ökade Accuracy väldig
 
 
 
-#### Test #4:
+#### Experiment #4:
 
 ```
 Settings:    
@@ -119,7 +119,7 @@ Loss under Train var dock en tiondel lägre än föregående modell.
 
 
 
-#### Test #5:
+#### Experiment #5:
 
 ```
 Settings:    
@@ -152,7 +152,7 @@ Modellen i Test #3 gav oss bäst resultat när det gäller Accuracy och tid spen
 
 ### Non-Convolutional (ANN):
 
-#### Test #1:
+#### Experiment #1:
 
 ```
 Settings:    
@@ -176,7 +176,7 @@ Denna modell var väldigt dålig men väldigt snabb.
 
 
 
-#### Test #2:
+#### Experiment #2:
 
 ```
 Settings:    
@@ -201,30 +201,105 @@ Det tog även bara en sekund längre för modellen att träna och validera test-
 
 
 
-#### Test #3:
+#### Experiment #3:
 
 ```
 Settings:    
     Epochs =            50    
     Learning Rate =     0.4
     Batch Size =        64 
-    Neurons =           64  
+    Neurons =           128
     
 Results (Accuracy & Loss):
-    Accuracy (Train & Validation):  1 & 0.9769
-    Moved:                          16.73 Average
-    Rotated:                        85.98 Average
+    Accuracy (Train & Validation):  1 & 0.9789
+    Moved:                          17.39 Average
+    Rotated:                        87.68 Average
     
-    Loss (Train & Validation):      6.8722*10^-4 & 0.1196
+    Loss (Train & Validation):      5.4733*10^-4 & 0.09306
     
-    Time elapsed: 24 seconds
+    Time elapsed: 25 seconds
     
-Anledning & Slutsats: Här dubblade vi antalet neuroner för att se om resultatet skulle förbättras.
-Alla resultat blev mycket bättre, Accuracy i allt test-data ökade och mängden Loss förbättras drastiskt.
-Det tog även bara en sekund längre för modellen att träna och validera test-datat.
+Anledning & Slutsats: Återigen gick vi på spåret att dubbla antalet neuroner.
+Resultatet blev återigen bättre.
+Tiden spenderad var bara en sekund längre.
 ```
 
 
+
+#### Experiment #4:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.4
+    Batch Size =        64 
+    Neurons =           1024
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9827
+    Moved:                          17.51 Average
+    Rotated:                        88.36 Average
+    
+    Loss (Train & Validation):      4.2237*10^-4 & 0.07589
+    
+    Time elapsed: 1 minute 19 seconds
+    
+Anledning & Slutsats: Här multiplicerade vi antalet neuroner med åtta för att se när modellen blir sämre.
+Resultatet blev knappast bättre.
+Tiden spenderad var nästan en hel minut längre.
+```
+
+
+
+#### Experiment #5:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.4
+    Batch Size =        64 
+    Neurons =           16384
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9842
+    Moved:                          17.39 Average
+    Rotated:                        88.42 Average
+    
+    Loss (Train & Validation):      4.05*10^-4 & 0.07187
+    
+    Time elapsed: 13 minute 47 seconds
+    
+Anledning & Slutsats: Här multiplicerade vi antalet neuroner med 16 för att återigen se när modellen blir sämre.
+Resultatet var väldigt varierat. Moved Data fick sämre Accuracy, medan Rotated Data fick lite bättre.
+Tiden spenderad var nästan 15 minuter. Alldeles för långsamt för ett sådant mediokert resultat.
+```
+
+
+
+#### Experiment #6:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.4
+    Batch Size =        32
+    Neurons =           1024
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9836
+    Moved:                          17.69 Average
+    Rotated:                        89.04 Average
+    
+    Loss (Train & Validation):      1.5577*10^-4 & 0.08045
+    
+    Time elapsed: 2 minute 36 seconds
+    
+Anledning & Slutsats: Vi gick tillbaka till 1024 neuroner och testade istället att halvera Batch Size.
+Detta gav oss högst Accuracy i både Moved & Rotated Data, samt låg Loss. Alltså ett godkänt resultat på genomsnittligt kort tid.
+```
+
+#### Slutsats Experiment ANN:
+Modellen i Test #6 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
 
 
 
