@@ -121,6 +121,7 @@ Settings:
 ```
 ![moved_data](images/non_conv_0.45_lr/image1.png)
 ![rotated_data](images/non_conv_0.45_lr/image2.png)
+![test](images/non_conv_0.45_lr/epoch_accuracy.svg)
 
 
 #### b.
