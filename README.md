@@ -79,7 +79,6 @@ Settings:
     rotated data = 81,52
 
     At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is more stable but still worse than 0.01 LR.
-    försökte hitta en gräns emellan 0.01 och 1 då 1 var för stort
 
     7s
 ```
@@ -348,7 +347,6 @@ Settings:
     rotated data = 85,01
 
     At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is more stable but still worse than 0.01 LR.
-    försökte hitta en gräns emellan 0.01 och 1 då 1 var för stort
 
     1m 48s
 ```
