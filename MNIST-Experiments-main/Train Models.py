@@ -81,15 +81,15 @@ def image_cmatrix(model, xtest, ytest):
 
 
 # Läs in datan
-x_train = np.concatenate([np.load(f"X Train{i+1}.npy") for i in range(2)])
-x_test = np.load("X Test.npy")
-x_move = np.load("X Moved Numbers.npy")
-x_rot = np.load("X Rotated Numbers.npy")
+x_train = np.concatenate([np.load(f"D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Train{i+1}.npy") for i in range(2)])
+x_test = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Test.npy")
+x_move = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Moved Numbers.npy")
+x_rot = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\X Rotated Numbers.npy")
 
-y_train = np.load("Y Train.npy")
-y_test = np.load("Y Test.npy")
-y_move = np.load("Y Moved Numbers.npy")
-y_rot = np.load("Y Rotated Numbers.npy")
+y_train = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Train.npy")
+y_test = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Test.npy")
+y_move = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Moved Numbers.npy")
+y_rot = np.load("D:\DIS\AI-Programmering\AI_Labb_3\MNIST-Experiments-main\Y Rotated Numbers.npy")
 
 
 # Model för ett vanlig artificiellt-neuronnät.
@@ -97,11 +97,11 @@ def non_convolutional_model():
     model = K.Sequential()
     model.add(K.layers.Flatten())
     model.add(K.layers.Input(28*28))
-    model.add(K.layers.Dense(32, activation="relu"))
+    model.add(K.layers.Dense(1024 , activation="relu"))
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.01),
+                  optimizer=K.optimizers.SGD(lr=0.4),
                   metrics=["accuracy"])
     return model
 
@@ -111,30 +111,31 @@ def non_convolutional_model():
 def convolutional_model():
     model = K.Sequential()
     model.add(K.layers.Input((28,28,1)))
-    model.add(K.layers.Conv2D(16, kernel_size=(8, 8), strides=(1,1), activation="relu"))
+    #model.add(K.layers.Conv2D(32, kernel_size=(8, 8), strides=(1,1), activation="relu")) #här neurons, 16 standard
+    model.add(K.layers.Conv2D(32, kernel_size=(8, 8), strides=(1,1), activation="relu")) #här neurons
     model.add(K.layers.MaxPooling2D())
     model.add(K.layers.Flatten())
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.01),
+                  optimizer=K.optimizers.SGD(lr=0.4),
                   metrics=["accuracy"])
     return model
 
 
 
 # Mapp för att logga resultat som ska visas i tensorboard
-log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "-conv"
+log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "non-conv"
 tb_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, profile_batch=0)
 
 # Välj en modell
-model = convolutional_model()
+model = non_convolutional_model()
 
 # Träna modellen
 model.fit(x_train, y_train,
       epochs=50,
       validation_split=0.2,
-      batch_size=256,
+      batch_size=32,   #256 standard
       verbose=1,
       callbacks=[tb_callback]
      )
