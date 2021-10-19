@@ -19,7 +19,14 @@ Settings:
     Batch Size = 64  
     Neurons = 32  
     
-Results:
+Results (Accuracy & Loss):
+    Accuracy (Train / Validation): 0.994 / 0.9651
+    Moved: 15.54 Average
+    Rotated: 82.28 Average
+    
+    Loss (Train / Validation): 0.01946 / 0.2458
+    
+    Time elapsed: 23 seconds
 ```
 
 
