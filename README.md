@@ -36,6 +36,120 @@ Denna modell fick okej resultat men var väldigt långsam på att träna upp sig
 
 
 
+#### Test #2:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.35  
+    Batch Size =        64  
+    Kernel Size =       (8, 8)
+    Strides =           (1, 1)
+    Layers =            1
+    Neurons =           16
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  0.9963 & 0.9794
+    Moved:                          21.01 Average
+    Rotated:                        86.47 Average
+    
+    Loss (Train & Validation):      0.01093 & 0.1201
+    
+    Time elapsed: 2 minutes 15 seconds
+    
+Anledning & Slutsats: Här sänkte vi antalet layers & neuroner för att försöka snabba upp modellen. Vi ökade även LR för att se om resultaten blir bättre eller likadana.
+Denna modell fick mycket sämre resultat, men var även mycket snabbare än föregående.
+```
+
+
+
+#### Test #3:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.40  
+    Batch Size =        64  
+    Kernel Size =       (8, 8)
+    Strides =           (1, 1)
+    Layers =            1
+    Neurons =           32
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9875
+    Moved:                          21.65 Average
+    Rotated:                        90.17 Average
+    
+    Loss (Train & Validation):      2.9956*10^-4 & 0.06705
+    
+    Time elapsed: 2 minutes 57 seconds
+    
+Anledning & Slutsats: Här ökade vi antalet neuroner och LR för att se om vi kunde få ännu bättre resultat under ungefär likadan tid.
+Denna modell fick mycket bättre resultat, dock var den lite långsammare.
+Accuracy i Moved Data stannar runt 21 men i Rotated Data ökade Accuracy väldigt mycket. Loss blev även väldigt mycket lägre.
+```
+
+
+
+#### Test #4:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.4  
+    Batch Size =        32  
+    Kernel Size =       (8, 8)
+    Strides =           (1, 1)
+    Layers =            1
+    Neurons =           64
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9866
+    Moved:                          21.27 Average
+    Rotated:                        89.29 Average
+    
+    Loss (Train & Validation):      8.0342*10^-5 & 0.0895
+    
+    Time elapsed: 5 minutes 22 seconds
+    
+Anledning & Slutsats: Vi dubblade antalet neuroner och halverade Batch Size för att se om resultatet kan bli ännu bättre under en kortare tid.
+Denna modell fick sämre resultat i både Moved och Rotated Data. Den tog även nästan dubbelt så lång tid att köra igenom.
+Loss under Train var dock en tiondel lägre än föregående modell.
+```
+
+
+
+#### Test #5:
+
+```
+Settings:    
+    Epochs =            50    
+    Learning Rate =     0.4  
+    Batch Size =        32  
+    Kernel Size =       (8, 8)
+    Strides =           (1, 1)
+    Layers =            1
+    Neurons =           64
+    
+Results (Accuracy & Loss):
+    Accuracy (Train & Validation):  1 & 0.9866
+    Moved:                          21.27 Average
+    Rotated:                        89.29 Average
+    
+    Loss (Train & Validation):      8.0342*10^-5 & 0.0895
+    
+    Time elapsed: 5 minutes 22 seconds
+    
+Anledning & Slutsats: Vi dubblade antalet neuroner och halverade Batch Size för att se om resultatet kan bli ännu bättre under en kortare tid.
+Denna modell fick sämre resultat i både Moved och Rotated Data. Den tog även nästan dubbelt så lång tid att köra igenom.
+Loss under Train var dock en tiondel lägre än föregående modell.
+```
+
+
+
+
+
+
 ### Non-Convolutional (ANN):
 
 #### Test #1:
