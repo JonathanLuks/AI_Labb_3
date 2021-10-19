@@ -56,9 +56,9 @@ Settings:
     7s
 ```
 ![moved_data](images/non_conv_1_lr/image1.png)
-![rotated_data](images/non_conv_0.1_lr/image2.png)
-![accuracy](images/non_conv_0.1_lr/epoch_accuracy.svg)
-![loss](images/non_conv_0.1_lr/epoch_loss.svg)
+![rotated_data](images/non_conv_1_lr/image2.png)
+![accuracy](images/non_conv_1_lr/epoch_accuracy.svg)
+![loss](images/non_conv_1_lr/epoch_loss.svg)
 
 
 ##### Run #3:
