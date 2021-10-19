@@ -30,7 +30,7 @@ Settings:
 	
     7s
 ```
-![moved_data](images/non_conv_0.01_lr/individualImage)
+![moved_data](images/non_conv_0.01_lr/individualImage.png)
 
 
 #### b.
