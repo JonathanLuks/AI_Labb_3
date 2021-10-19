@@ -1,7 +1,7 @@
 # MNIST-Experiments
 Labb 3 i kursen AI-programmering
 
-# Här är mina resultat hittils:
+# Här är våra resultat hittils:
 
 ## Uppgift 7:
 
