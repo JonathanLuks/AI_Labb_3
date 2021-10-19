@@ -327,8 +327,8 @@ Test #1:
 	Batch Size = 64
 	Kernel Size = (8, 8)
 	Strides = (1, 1)
-	Layers: 2
-	Neurons: 32
+	Layers = 2
+	Neurons = 32
 
 
 	1/0.9897 Accuracy (train/validation). 2.1445*10^-5/0.007792 (train/validation) Loss. Moved: 23.74 avg. Rotated: 89.92 avg.
@@ -342,8 +342,8 @@ Test #2:
 	Batch Size = 64
 	Kernel Size = (8, 8)
 	Strides = (1, 1)
-	Layers: 1
-	Neurons: 16
+	Layers = 1
+	Neurons = 16
 
 
 	0.9963/0.9794 Accuracy (train/validation). 0.01093/0.1201 Loss (train/validation). Moved: 21.01 avg. Rotated: 86.47 avg.
@@ -357,8 +357,8 @@ Test #3:
 	Batch Size = 64
 	Kernel Size = (8, 8)
 	Strides = (1, 1)
-	Layers: 1
-	Neurons: 32
+	Layers = 1
+	Neurons = 32
 
 
 	1/0.9875 Accuracy. 2.9956*10^-4/0.06705 Loss. Moved: 21.65 avg. Rotated: 90.17 avg.
@@ -368,21 +368,107 @@ Test #3:
 Test #4:
 	Settings:
 	Epochs = 50
-	Learning Rate = 0.45
-	Batch Size = 64
+	Learning Rate = 0.4
+	Batch Size = 32
 	Kernel Size = (8, 8)
 	Strides = (1, 1)
-	Layers: 1
-	Neurons: 32
+	Layers = 1
+	Neurons = 64
+
+	1/0.9866 Accuracy. 8.0342*10^-5/0.0895 Loss. Moved: 21.27 avg. Rotated: 89.29 avg.
+	5m 22s elapsed.
 
 
-	
+Test #5:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.35
+	Batch Size = 128
+	Kernel Size = (8, 8)
+	Strides = (1, 1)
+	Layers = 1
+	Neurons = 32
+
+
+	1/0.9877 Accuracy. 8.7093*10^-4/0.05637 Loss. Moved: 21.86 avg. Rotated: 89.97 avg.
+	2m 59s elapsed.
+
+
+Answer: Test #3 was the best!! around!!! nothing's gonna ever keep me down!!!
 
 
 
+non-conv:
+Test #1:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.3
+	Batch Size = 64´
+	Neurons = 32
 
 
+	0.994/0.9651 Accuracy. 0.01946/0.2458 Loss. Moved: 15.54 avg. Rotated: 82.28 avg.
+	23s elapsed.
 
 
+Test #2:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.4
+	Batch Size = 64
+	Neurons = 64
 
+
+	1/0.9769 Accuracy. 6.8722*10^-4/0.1196 Loss. Moved: 16.73 avg. Rotated: 85.98 avg.
+	24s elapsed.
+
+
+Test #3:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.4
+	Batch Size = 64
+	Neurons = 128
+
+
+	1/0.9789 Accuracy. 5.4733*10^-4/0.09306 Loss. Moved: 17.39 avg. Rotated: 87.68 avg.
+	25s elapsed.
+
+
+Test #4:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.4
+	Batch Size = 64
+	Neurons = 1024
+
+
+	1/0.9827 Accuracy. 4.2237*10^-4/0.07589 Loss. Moved: 17.51 avg. Rotated: 88.36 avg.
+	1m 19s elapsed.
+
+Test #5:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.4
+	Batch Size = 64
+	Neurons = 16384
+
+
+	1/0.9842 Accuracy. 4.05*10^-4/0.07187 Loss. Moved: 17.39 avg. Rotated: 88.42 avg.
+	13m 47s elapsed.
+
+
+Test #6:
+	Settings:
+	Epochs = 50
+	Learning Rate = 0.4
+	Batch Size = 32
+	Neurons = 1024
+
+
+	1/0.9836 Accuracy. 1.5577*10^-4/0.08045 Loss. Moved: 17.69 avg. Rotated: 89.04 avg.
+	2m 36s elapsed.
+
+
+Answer: Test #6 was best!! around!!! nothing's gonna ever keep me down!!
 
