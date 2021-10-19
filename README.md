@@ -53,7 +53,7 @@ Settings:
     7s
 ```
 ![moved_data](images/non_conv_1_lr/image1.png)
-![rotated_data](images/non_conv_0.01_lr/image2.png)
+![rotated_data](images/non_conv_0.1_lr/image2.png)
 
 ##### Run #3:
 
@@ -76,7 +76,7 @@ Settings:
     7s
 ```
 ![moved_data](images/non_conv_0.5_lr/image1.png)
-![rotated_data](images/non_conv_0.01_lr/image2.png)
+![rotated_data](images/non_conv_0.5_lr/image2.png)
 
 ##### Run #4:
 
@@ -98,7 +98,7 @@ Settings:
     7s
 ```
 ![moved_data](images/non_conv_0.4_lr/image1.png)
-![rotated_data](images/non_conv_0.01_lr/image2.png)
+![rotated_data](images/non_conv_0.4_lr/image2.png)
 
 ##### Run #5:
 
@@ -120,7 +120,7 @@ Settings:
     7s
 ```
 ![moved_data](images/non_conv_0.45_lr/image1.png)
-![rotated_data](images/non_conv_0.01_lr/image2.png)
+![rotated_data](images/non_conv_0.45_lr/image2.png)
 
 
 #### b.
