@@ -124,27 +124,29 @@ Loss under Train var dock en tiondel lägre än föregående modell.
 ```
 Settings:    
     Epochs =            50    
-    Learning Rate =     0.4  
-    Batch Size =        32  
+    Learning Rate =     0.35
+    Batch Size =        128  
     Kernel Size =       (8, 8)
     Strides =           (1, 1)
     Layers =            1
-    Neurons =           64
+    Neurons =           32
     
 Results (Accuracy & Loss):
-    Accuracy (Train & Validation):  1 & 0.9866
-    Moved:                          21.27 Average
-    Rotated:                        89.29 Average
+    Accuracy (Train & Validation):  1 & 0.9877
+    Moved:                          21.86 Average
+    Rotated:                        89.97 Average
     
-    Loss (Train & Validation):      8.0342*10^-5 & 0.0895
+    Loss (Train & Validation):      8.7093*10^-4 & 0.05637
     
-    Time elapsed: 5 minutes 22 seconds
+    Time elapsed: 2 minutes 59 seconds
     
-Anledning & Slutsats: Vi dubblade antalet neuroner och halverade Batch Size för att se om resultatet kan bli ännu bättre under en kortare tid.
-Denna modell fick sämre resultat i både Moved och Rotated Data. Den tog även nästan dubbelt så lång tid att köra igenom.
-Loss under Train var dock en tiondel lägre än föregående modell.
+Anledning & Slutsats: Här ville vi testa några andra slumpvalda värden utifrån föregående experiment för att se hur stor skillnad dem olika värdena gör.
+Denna modell hade okej resultat. Accuracy i Moved Data var högst av alla modeller, men Accuracy i Rotated Data var ungefär lika. Loss var dock hyffsat låg.
+Tiden spenderad var även runt genomsnittet.
 ```
 
+#### Slutsats Experiment CNN:
+Modellen i Test #3 gav oss bäst resultat när det gäller Accuracy och tid spenderad.
 
 
 
