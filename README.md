@@ -279,6 +279,132 @@ Att lägga till lager i ANN gjorde ingen skillnad.
 
 #### a.
 
+##### Run #1:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.01
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9736 & 0,9736 (train först validation sen) 
+    loss = 0,0969 & 0,09685 (train först validation sen)
+    moved data = 18,06
+    rotated data = 85,99
+
+    1m 55s
+```
+![moved_data](images/0.01_lr/image1.png)
+![rotated_data](images/0.01_lr/image2.png)
+![accuracy](images/0.01_lr/epoch_accuracy.svg)
+![loss](images/0.01_lr/epoch_loss.svg)
+
+
+##### Run #2:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 1
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,1127 & 0,106 (train först validation sen) 
+    loss = 2,302 & 2,302 (train först validation sen)
+    moved data = 11,35
+    rotated data = 7,32
+
+    At 1.00 Learning Rate, accuracy and loss does not change and is at a stable 0.1 and 2.4 in value.
+    försökte hitta gränsen där det  blir sämre.
+
+    1m 50s
+```
+![moved_data](images/1_lr/image1.png)
+![rotated_data](images/1_lr/image2.png)
+![accuracy](images/1_lr/epoch_accuracy.svg)
+![loss](images/1_lr/epoch_loss.svg)
+
+
+##### Run #3:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.5
+    Validation Split = 0.5
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9873 & 0,9731 (train först validation sen) 
+    loss = 0,03895 & 0,1066 (train först validation sen)
+    moved data = 21,51
+    rotated data = 85,01
+
+    At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is more stable but still worse than 0.01 LR.
+    försökte hitta en gräns emellan 0.01 och 1 då 1 var för stort
+
+    1m 48s
+```
+![moved_data](images/0.5_lr/image1.png)
+![rotated_data](images/0.5_lr/image2.png)
+![accuracy](images/0.5_lr/epoch_accuracy.svg)
+![loss](images/0.5_lr/epoch_loss.svg)
+
+
+##### Run #4:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.4
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9954 & 0,9826 (train först validation sen) 
+    loss = 0,01648 & 0,07377 (train först validation sen)
+    moved data = 19,32
+    rotated data = 86,84
+
+    At 0.2 Learning Rate, the validation and training model is much more even than at the previous 0.5 LR. The accuracy stops at around 0.985 and the loss rate stops at around 0.02.
+
+    1m 49s
+```
+![moved_data](images/0.4_lr/image1.png)
+![rotated_data](images/0.4_lr/image2.png)
+![accuracy](images/0.4_lr/epoch_accuracy.svg)
+![loss](images/0.4_lr/epoch_loss.svg)
+
+
+##### Run #5:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.45
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9993 & 0,9869 (train först validation sen) 
+    loss = 3,9969 * 10^-3 & 0,05882 (train först validation sen)
+    moved data = 21,2
+    rotated data = 91,1
+
+    At 0.11 LR, the training accuracy is even and stops at around 0.9946 and it's loss value at 0.02. The validation model has more uneven values in both accuracy and loss. It stops at around 0.985 accuracy and 0.055 loss.
+
+    1m 50s
+```
+![moved_data](images/0.45_lr/image1.png)
+![rotated_data](images/0.45_lr/image2.png)
+![accuracy](images/0.45_lr/epoch_accuracy.svg)
+![loss](images/0.45_lr/epoch_loss.svg)
+
+
+
 #### b.
 
 #### c.
