@@ -30,8 +30,114 @@ Settings:
 	
     7s
 ```
-![moved_data](images/non_conv_0.01_lr/individualImage.png)
-![rotated_data](images/non_conv_0.01_lr/"individualImage (1).png")
+![moved_data](images/non_conv_0.01_lr/image1.png)
+![rotated_data](images/non_conv_0.01_lr/image2.png)
+
+##### Run #2:
+
+```
+Settings:
+    Settings:
+    Epochs = 50
+    Learning Rate = 1
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9773 & 0,9478 (train först validation sen) 
+    loss = 0,07375 & 0,2152 (train först validation sen)
+    moved data = 15,66
+    rotated data = 75,02
+
+    försökte hitta gränsen där det  blir sämre.
+
+    7s
+```
+![moved_data](images/non_conv_0.01_lr/image1.png)
+![rotated_data](images/non_conv_0.01_lr/image2.png)
+
+##### Run #3:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.5
+    Validation Split = 0.5
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,996 & 0,9662 (train först validation sen) 
+    loss = 0,01788 & 0,1424 (train först validation sen)
+    moved data = 16,22
+    rotated data = 81,52
+
+    At 0.5 Learning Rate, the validation model is very uneven and differs in accuracy & loss value a lot. The training model is more stable but still worse than 0.01 LR.
+    försökte hitta en gräns emellan 0.01 och 1 då 1 var för stort
+
+    7s
+```
+![moved_data](images/non_conv_0.01_lr/image1.png)
+![rotated_data](images/non_conv_0.01_lr/image2.png)
+
+##### Run #4:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.01
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9301 & 0,9309 (train först validation sen) 
+    loss = 0,2475 & 0,2423 (train först validation sen)
+    moved data = 11,98
+    rotated data = 75,77
+	
+    7s
+```
+![moved_data](images/non_conv_0.01_lr/image1.png)
+![rotated_data](images/non_conv_0.01_lr/image2.png)
+
+##### Run #5:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.01
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9301 & 0,9309 (train först validation sen) 
+    loss = 0,2475 & 0,2423 (train först validation sen)
+    moved data = 11,98
+    rotated data = 75,77
+	
+    7s
+```
+![moved_data](images/non_conv_0.01_lr/image1.png)
+![rotated_data](images/non_conv_0.01_lr/image2.png)
+
+##### Run #1:
+
+```
+Settings:
+    Epochs = 50
+    Learning Rate = 0.01
+    Validation Split = 0.2
+    Batch Size = 256
+    Kernel Size = (8, 8)
+
+    accuracy = 0,9301 & 0,9309 (train först validation sen) 
+    loss = 0,2475 & 0,2423 (train först validation sen)
+    moved data = 11,98
+    rotated data = 75,77
+	
+    7s
+```
+![moved_data](images/non_conv_0.01_lr/image1.png)
+![rotated_data](images/non_conv_0.01_lr/image2.png)
 
 #### b.
 
