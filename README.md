@@ -7,6 +7,20 @@ I den här filen ska ni beskriva:
 - Era experiment
 - Era slutsatser
 
+
+### Non-Convolutional:
+
+#### Test #1:
+``
+    Settings: Epochs = 50,
+    Learning Rate = 0.3,
+    Batch Size = 64,
+    Neurons = 32
+    Results:
+    Test
+``
+
+
 ## Glöm inte!
 
 Glöm inte att ha med figurer:
